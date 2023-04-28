@@ -47,3 +47,28 @@ def mode_of_transportation_picker():
 
 transportation_result = mode_of_transportation_picker()
 print(f"We selected {transportation_result} for your trip. Enjoy your mode of transportation!")
+
+import random
+
+Restaurant_list = ["Best Rated Taco House", "Best Rated Sushi", "Best Mexican Food", "Best Rated Food Trucks", "Best Rated Fusion Food", "Best Local Farm to Table Restaurant"]
+
+def restaurant_picker(list):
+    random_restaurant = random.choice(list)
+    return random_restaurant
+
+def random_restaurant_picker():
+    user_picked = False
+    while user_picked == False:
+        random_restaurant = restaurant_picker(Restaurant_list)
+        print(f"We have randomly selected {random_restaurant} for your restaurant. Would you like this added to your itinerary?")
+        user_choice = input("Enter 'yes' to keep this restaurant or 'no' to see a new random option...")
+        if user_choice == "yes":
+            print(f"Great! {random_restaurant} was added to your intinerary.")
+            user_picked = True
+            return random_restaurant
+        elif user_choice == "no":
+            print("Here is another random selection for you.")
+
+restaurant_result = random_restaurant_picker()
+print(f"We selected {restaurant_result} for your trip. Enjoy your dining experience! May it be all you imagine and more!")
+
