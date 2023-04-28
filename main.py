@@ -72,3 +72,27 @@ def random_restaurant_picker():
 restaurant_result = random_restaurant_picker()
 print(f"We selected {restaurant_result} for your trip. Enjoy your dining experience! May it be all you imagine and more!")
 
+import random
+entertainment_options = ["Cirque Du Soleil", "NFL Football Game", "Live Theatre", "Concert", "Country Dancing", "Outlet Shopping", "Hiking", "Horseback Riding"]
+
+def entertainment_picker(ent_list):
+    random_entertainment = random.choice(ent_list)
+    return random_entertainment
+
+def random_entertainment_picker():
+    user_picked = False
+    while user_picked == False:
+        random_entertainment = entertainment_picker(entertainment_options)
+        print(f"We have randomly selected {random_entertainment} for your entertainment. Would you like this added to your itinerary?")
+        user_choice = input("Enter 'yes' to keep this entertainment option or 'no' to see a new random option...")
+        if user_choice == "yes":
+            print(f"Great! {random_entertainment} was added to your intinerary.")
+            user_picked = True
+            return random_entertainment
+        elif user_choice == "no":
+            print("Here is another random selection for you.")
+
+entertainment_result = random_entertainment_picker()
+print(f"We selected {entertainment_result} for your trip. Enjoy your entertainment!")
+
+print(f"Here is your complete itinerary!{destination_result, transportation_result, restaurant_result, entertainment_result}")
